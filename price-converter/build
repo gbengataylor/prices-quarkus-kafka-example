@@ -1,0 +1,11 @@
+mvn package
+java -jar target/price-converter-1.0-SNAPSHOT-runner.jar -Dquarkus.profile=dev
+
+
+#openshift
+./mvnw quarkus:add-extension -Dextensions="openshift"
+#update application.properties with appropriate fields
+#just to build
+#./mvnw clean package -Dquarkus.container-image.build=true
+
+./mvnw clean package -Dquarkus.kubernetes.deploy=true
