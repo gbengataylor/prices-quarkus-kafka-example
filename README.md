@@ -8,7 +8,10 @@ Kafka example with quarkus and kafka (amq streams)
 
 
 
+
 ## Deploy AMQ Streams
+
+### test topics using oc client
 
 ## if running Kafka elsewhere or running in CRW, you can pass the kafka bootstrap
 
