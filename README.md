@@ -118,7 +118,7 @@ cd price-generator
 ./mvnw clean package -Dquarkus.kubernetes.deploy=true
 ```
 
-**Note**: if using JDK8 the Image gets built but the deployment fails, can deploy the microservice with
+**Note**: if the Image gets built but the deployment fails (and may with JDK8), you can deploy the microservice with
 ```sh
 oc new-app price-generator:1.0-SNAPSHOT
 oc expose service price-generator
@@ -129,7 +129,7 @@ oc expose service price-generator
 cd price-converter
 ./mvnw clean package -Dquarkus.kubernetes.deploy=true
 ```
-**Note**: if using JDK8 the Image gets built but the deployment fails, can deploy the microservice with
+**Note**: if the Image gets built but the deployment fails(and may with JDK8), you can deploy the microservice with
 ```sh
 oc new-app price-converter:1.0-SNAPSHOT
 oc expose service price-converter
