@@ -117,6 +117,7 @@ S2I is also an option, but not used in this example
 cd price-generator
 ./mvnw clean package -Dquarkus.kubernetes.deploy=true
 oc label dc/price-generator  app.kubernetes.io/part-of=prices --overwrite
+oc label dc/price-generator app.openshift.io/runtime=java --overwrite 
 ```
 
 **Note**: if the Image gets built but the deployment fails (and may with JDK8), you can deploy the microservice with
@@ -130,6 +131,7 @@ oc expose service price-generator
 cd price-converter
 ./mvnw clean package -Dquarkus.kubernetes.deploy=true
 oc label dc/price-converter  app.kubernetes.io/part-of=prices --overwrite
+oc label dc/price-converter app.openshift.io/runtime=java --overwrite 
 ```
 **Note**: if the Image gets built but the deployment fails(and may with JDK8), you can deploy the microservice with
 ```sh
