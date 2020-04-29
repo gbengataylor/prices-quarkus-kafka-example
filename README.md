@@ -95,7 +95,24 @@ oc delete pod kafka-producer
 oc delete pod kafka-consumer
 ```
 
-## Deploy microservices on openshift
+## Deploy microservices on OpenShift from remote git repo
+
+```
+oc new-app registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift~https://github.com/gbengataylor/prices-quarkus-kafka-example.git --context-dir=price-generator --name=price-generator
+
+oc expose svc price-generator 
+
+oc new-app registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift~https://github.com/gbengataylor/prices-quarkus-kafka-example.git --context-dir=price-converter --name=price-converter
+
+oc expose svc price-converter 
+
+oc label dc/price-generator  app.kubernetes.io/part-of=prices --overwrite
+oc label dc/price-generator  app.openshift.io/runtime=java --overwrite 
+oc label dc/price-converter  app.kubernetes.io/part-of=prices --overwrite
+oc label dc/price-converter app.openshift.io/runtime=java --overwrite 
+```
+
+## Deploy microservices on openshift using local git repo/source code
 
 **Note**: This assumes that the Kafka Cluster has been deployed on OpenShift and in the same project
 ```sh
@@ -141,7 +158,9 @@ oc new-app price-converter:1.0-SNAPSHOT
 oc expose service price-converter
 ```
 
-### Test
+## Test On Openshift
+
+After deploying to openshift
 ```
 export URL="http://$(oc get route price-converter -o jsonpath='{.spec.host}')"
 echo "Navigate to  URL: $URL/prices.html to view updated prices"
