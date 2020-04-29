@@ -60,7 +60,7 @@ docker-compose -f kafka/docker-compose.yaml down
 ```
 
 ## Deploy AMQ Streams
-Set the OpenShi name
+Set the OpenShift name
 ```sh
 PRICES_PROJECT=prices-kafka
 ```
