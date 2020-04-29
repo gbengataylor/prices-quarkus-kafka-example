@@ -38,6 +38,7 @@ mvn clean compile quarkus:dev
 
 ### Test
 navigate to http://localhost:8080/prices.html
+
 Every 5 seconds you should see the page refresh with a new price
 
 **Note:** if you choose to deploy Kafka elsewhere or maybe you are developing in CodeReady Workspaces (CRW), you can pass the appropriate location of the kafka bootstrap to the local deployment using
@@ -143,5 +144,5 @@ oc expose service price-converter
 ### Test
 ```
 export URL="http://$(oc get route price-converter -o jsonpath='{.spec.host}')"
-echo "Naviate to  URL: $URL/prices.html to view updated prices"
+echo "Navigate to  URL: $URL/prices.html to view updated prices"
 ```
