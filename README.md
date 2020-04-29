@@ -92,11 +92,12 @@ oc run kafka-consumer -ti --image=registry.redhat.io/amq7/amq-streams-kafka-23:1
 
 # clean up after testing
 oc delete pod kafka-producer
+oc delete pod kafka-consumer
 ```
 
 ## Deploy microservices on openshift
 
-**Note**: This assumes that the Kafka Cluster has been deployed on OpenShift and in the sa
+**Note**: This assumes that the Kafka Cluster has been deployed on OpenShift and in the same project
 ```sh
 oc project $PRICES_PROJECT
 ```
