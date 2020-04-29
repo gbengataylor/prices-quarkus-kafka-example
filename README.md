@@ -103,8 +103,7 @@ oc project $PRICES_PROJECT
 ```
 Quarkus has an extension to faciliate deployment to OpenShift. 
 ```
-./mvnw 
-quarkus:add-extension -Dextensions="openshift"
+./mvnw quarkus:add-extension -Dextensions="openshift"
 ```
 The two microserivces already include the openshift extension so there is no need to run that command
 
