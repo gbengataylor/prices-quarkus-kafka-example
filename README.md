@@ -1,5 +1,5 @@
 # prices-quarkus-kafka-example
-Kafka example with quarkus and kafka (amq streams). This is based on the Quarkus Kafka example at [here](https://quarkus.io/guides/kafka)
+Kafka example with quarkus and kafka (amq streams). This is based on the Quarkus Kafka example [here](https://quarkus.io/guides/kafka). The difference is that the application is decomposed into two microservices
 
 *This project uses JDK 8 but probably needs to be updated to use 11 since 8 is deprecated with later versions of Quarkus*
 
