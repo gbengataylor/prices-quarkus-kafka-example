@@ -6,9 +6,9 @@ Kafka example with quarkus and kafka (amq streams). This is based on the Quarkus
 ![](images/kafka-guide-architecture.png)
 
 * [Local Development](##Local-development)
-* [Deploy AMQ Streams](##Deploy-AMQStreams)
+* [Deploy AMQ Streams](##Deploy-AMQ-Streams)
 * [Deploy microservices on OpenShift from remote git repo](#Deploy-microservices-on-OpenShift-from-remote-git-repo)
-* [Deploy microservices on openshift using local git repo/source code](#Deploy microservices on openshift using local git repo/source code)
+* [Deploy microservices on openshift using local git repo/source code](#Deploy-microservices-on-openshift-using-local-git repo/source-code)
 
 ## Local development
 
