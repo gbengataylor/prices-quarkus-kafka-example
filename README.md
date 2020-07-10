@@ -170,3 +170,8 @@ After deploying to openshift
 export URL="http://$(oc get route price-converter -o jsonpath='{.spec.host}')"
 echo "Navigate to  URL: $URL/prices.html to view updated prices"
 ```
+
+To view the stream using the http tool
+```
+http $URL/prices/stream --stream
+```
